@@ -19,11 +19,11 @@ const juan = {
     // console.log(Object.entries(juan)[3][1]); // Codigo probado en consola
     // console.log(Object.entries(juan)[3][1]("Curso 2")); // Error
 
-console.log(Object.keys(juan));
-console.log(Object.getOwnPropertyNames(juan));
-console.log(Object.entries(juan));
+// console.log(Object.keys(juan));
+// console.log(Object.getOwnPropertyNames(juan));
+// console.log(Object.entries(juan));
 
-console.log(Object.getOwnPropertyDescriptors(juan));
+// console.log(Object.getOwnPropertyDescriptors(juan));
 
 
 
@@ -34,4 +34,44 @@ Object.defineProperty(juan, "pruebaNaza",{
     writable: true,
     enumerable: true,
     configurable: true
-})
+});
+
+
+// Object.defineProperty
+Object.defineProperty(juan, "navigator",{
+    value: "Chrome",
+    writable: true,
+    enumerable: false,
+    configurable: true
+});
+
+Object.defineProperty(juan, "pruebaNaza",{
+    value: "extraterrestre",
+    writable: true,
+    enumerable: true,
+    configurable: true
+});
+
+Object.defineProperty(juan, "editor",{
+    value: "VSCode",
+    writable: false,
+    enumerable: true,
+    configurable: true
+});
+
+Object.defineProperty(juan, "terminal",{
+    value: "WSL",
+    writable: true,
+    enumerable: true,
+    configurable: false
+});
+
+console.log(Object.getOwnPropertyDescriptors(juan));
+
+//Otras propiedades del superprototipo
+
+//Este método sella un objeto que sea pasada
+Object.seal(juan);
+
+//Este método congela un objeto que sea pasado
+Object.freeze(juan);
